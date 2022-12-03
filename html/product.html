@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Profile</title>
+  </head>
+  <body>
+    <div class="navBar">
+      <a href="/html/product.html">
+        <img
+          style="height: 38px; width: 38px"
+          src="/img/peugeot-logo-2-1.png"
+          alt=""
+      /></a>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">More</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+      <input
+        type="text"
+        class="inw myInp"
+        placeholder="Search Product"
+        id="myInput"
+      />
+      <span class="proBtn">
+        <img
+          src="/img/account-profile-user-icon--icon-search-engine-10.png"
+          alt="profile"
+        />
+      </span>
+    </div>
+    <div class="profile">
+      <!-- DP -->
+      <!-- <div class="name">
+        <img alt="img" class="imgCl" />
+        <p class="greetP">hello,<b class="nameP"></b></p>
+      </div> -->
+
+      <h2 style="padding: 21px 0"><span class="slidBtn">Add Product</span></h2>
+
+      <form class="pform">
+        <div class="und">
+          <label class="lab labMar">Product Name</label>
+          <input type="text" class="inw pName" placeholder="Product Name" />
+        </div>
+        <hr />
+
+        <div>
+          <label class="lab labMar"
+            >Product Image
+            <span style="left: 210px" class="crossCl">&#10006;</span></label
+          >
+          <input
+            type="file"
+            onchange="productImg(this)"
+            class="inw"
+            placeholder="add image"
+            id="pImg"
+            accept="image/png , image/gif , image/jpeg"
+          />
+        </div>
+        <hr />
+        <div>
+          <label class="lab labMar"
+            >Product Image 2 (optional) <span class="crossCl">&#10006;</span>
+          </label>
+
+          <input
+            type="file"
+            onchange="productImg2(this)"
+            class="inw"
+            placeholder="add image"
+            id="pImg2"
+            accept="image/png , image/gif , image/jpeg"
+          />
+        </div>
+        <hr />
+        <div>
+          <label class="lab labMar"
+            >Product Image 3 (optional)
+            <span class="crossCl">&#10006;</span></label
+          >
+          <input
+            type="file"
+            onchange="productImg3(this)"
+            class="inw"
+            placeholder="add image"
+            id="pImg3"
+            accept="image/png , image/gif , image/jpeg"
+          />
+        </div>
+        <hr />
+        <div>
+          <label class="lab labMar">Product Price</label>
+          <input
+            type="number"
+            class="inw"
+            placeholder="Product Price"
+            id="pPrice"
+          />
+        </div>
+
+        <button type="button" class="btn addProduct">add</button>
+      </form>
+
+      <!-- Sorting -->
+      <span class="filter">
+        <select
+          name="Min"
+          class="selc"
+          id="selcMin"
+          onchange="demo1(this.value)"
+        >
+          <option value="-9999999999999324">Max</option>
+          <option value="1">&#8377;Above 1</option>
+          <option value="1000">&#8377;Above 1000</option>
+          <option value="5000">&#8377;Above 5000</option>
+          <option value="10000">&#8377;Above 10000</option>
+          <option value="15000">&#8377;Above 15000</option>
+          <option value="20000">&#8377;Above 20000</option>
+          <!-- <option value="-9999999999999324">&#8377;Normal</option> -->
+        </select>
+
+        <select
+          name="Max"
+          class="selc"
+          id="selcMax"
+          onchange="demo2(this.value)"
+        >
+          <option value="1.7976931348623157e+308">Min</option>
+          <option value="1000">&#8377;Under 1000</option>
+          <option value="5000">&#8377;Under 5000</option>
+          <option value="10000">&#8377;Under 10000</option>
+          <option value="15000">&#8377;Under 15000</option>
+          <option value="20000">&#8377;Under 20000</option>
+          <!-- <option value="1.7976931348623157e+308">&#8377;Normal</option> -->
+        </select>
+      </span>
+      <div class="productSec"></div>
+    </div>
+
+    <!-- edit  -->
+
+    <form class="Ifrm Idfrm hide">
+      <div class="Uedit">
+        <h1>Profile</h1>
+        <button type="button" class="Xbtn editbtn">&#10006;</button>
+      </div>
+
+      <div class="name">
+        <img alt="img" class="imgCl" />
+        <p class="greetP">hello,<b class="nameP"></b></p>
+      </div>
+
+      <label for="Iusername" class="lab">userame </label>
+      <input type="text" id="Iusername" class="inw" disabled />
+
+      <label for="Iimg" class="lab">edit img </label>
+      <input
+        type="file"
+        accept="image/png , image/gif , image/jpeg"
+        onchange="profileImg(this)"
+        id="Iimg"
+        class="inw"
+      />
+
+      <label for="Ifull" class="lab">Fullname </label>
+      <input type="text" id="Ifull" class="inw" placeholder="Fullname" />
+
+      <label for="Iemail" class="lab">Email </label>
+      <input type="email" id="Iemail" class="inw" placeholder="Email" />
+
+      <label for="Idob" class="lab">DOB </label>
+      <input type="date" id="Idob" class="inw" />
+
+      <label for="Imobile" class="lab">Mobile no. </label>
+      <input type="number" id="Imobile" class="inw" placeholder="Mobile no." />
+
+      <label for="Iadd" class="lab">Address </label>
+      <input type="text" id="Iadd" class="inw" placeholder="Address" />
+
+      <div>
+        <button type="button" id="Isub" class="btn">Update</button>
+        <a href="/html/index.html"
+          ><button type="button" class="btn logout">Log out</button></a
+        >
+      </div>
+    </form>
+
+    <!-- product edit -->
+    <form class="prFrm Idfrm hide">
+      <div class="Uedit">
+        <h1>Product Edit</h1>
+        <button type="button" class="prbtn editbtn">&#10006;</button>
+      </div>
+
+      <label for="prName" class="lab">Name</label>
+      <input
+        type="text"
+        id="prName"
+        class="prName inw"
+        placeholder="Edit Name"
+      />
+
+      <label for="" class="lab newLab">edit img</label>
+      <div class="mltImg">
+        <div class="mlt">
+          <input
+            type="file"
+            onchange="productImg(this)"
+            id="prImg"
+            class="inw custom-file-input primgAdd"
+          /><span class="forZ">
+            <span class="editcross jsCross">&#10006;</span>
+            <img src="" class="editimgPr editImg" alt=""
+          /></span>
+        </div>
+
+        <div class="mlt">
+          <input
+            type="file"
+            onchange="productImg2(this)"
+            id="prImg2"
+            class="inw custom-file-input primgAdd"
+          />
+          <span class="forZ">
+            <span class="editcross jsCross">&#10006;</span>
+            <img src="" class="editimgPr2 editImg" alt=""
+          /></span>
+        </div>
+
+        <div class="mlt">
+          <input
+            type="file"
+            onchange="productImg3(this)"
+            id="prImg3"
+            class="inw custom-file-input primgAdd"
+          />
+          <span class="forZ">
+            <span class="editcross jsCross">&#10006;</span>
+            <img src="" class="editimgPr3 editImg" alt=""
+          /></span>
+        </div>
+      </div>
+
+      <label for="prPrice" class="lab">Price</label>
+      <input
+        type="number"
+        id="prPrice"
+        class="prPrice inw"
+        placeholder="Edit Price"
+      />
+
+      <button type="button" class="btn upPrd">Update</button>
+    </form>
+
+    <div class="Idfrm prImg hide">
+      <img class="img1 allImg" src="" alt="" />
+      <img class="img2 allImg" src="" alt="" />
+      <img class="img3 allImg" src="" alt="" />
+    </div>
+
+    <!-- overly -->
+    <div class="over hide"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/JS/product.js"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Log in</title>
+  </head>
+  <body>
+    <div class="log">
+      <form class="Lfrm">
+        <h1 class="ragi">Log In</h1>
+        <span class="flexRow">
+          <label for="Vusername" class="lab labMar">Username </label>
+          <input
+            type="text"
+            id="Vusername"
+            class="inw"
+            placeholder="Enter Username or E-mail"
+            required
+        /></span>
+
+        <span class="flexRow">
+          <label for="Vpassword" class="lab labMar">Password</label>
+          <input
+            type="password"
+            id="Vpassword"
+            class="inw"
+            placeholder="Enter Password"
+            required
+        /></span>
+        <a class="logHref" href="">
+          <button type="button" id="Lsub" class="btn hwBtn">Log In</button>
+        </a>
+
+        <!-- sign up btn -->
+        <p>
+          &nbsp;Don't have an account?&nbsp;
+          <a href="/html/reg.html">
+            <button type="button" class="Lbtn JLbtn">Sign up</button></a
+          >
+        </p>
+      </form>
+    </div>
+
+    <!-- <script src="/JS/jquery-3.6.0.min.js"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/JS/login.js"></script>
+  </body>
+</html>
